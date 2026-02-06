@@ -1,2 +1,3 @@
 # weather-dashboard
-weather dashboard - built by ClowAI
+
+Built by ClowAI.
