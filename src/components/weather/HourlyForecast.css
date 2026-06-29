@@ -1,0 +1,54 @@
+.hourly-forecast {
+  margin-top: var(--space-8);
+}
+
+.hourly-scroll {
+  display: flex;
+  gap: var(--space-3);
+  overflow-x: auto;
+  padding-bottom: var(--space-3);
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: var(--space-4);
+}
+
+.hourly-scroll::-webkit-scrollbar { height: 4px; }
+
+.hourly-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4) !important;
+  min-width: 80px;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+.hourly-item:hover {
+  transform: none;
+}
+
+.hourly-time {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.hourly-temp {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+}
+
+.hourly-rain {
+  font-size: var(--font-size-xs);
+  color: var(--color-info);
+}
+
+.hourly-chart {
+  padding: var(--space-4) !important;
+}
+
+@media (max-width: 480px) {
+  .hourly-item { min-width: 68px; padding: var(--space-2) var(--space-3) !important; }
+}

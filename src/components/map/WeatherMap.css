@@ -1,0 +1,80 @@
+.weather-map-section { margin-top: var(--space-8); }
+
+.map-card {
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.map-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.map-hint {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+}
+
+.map-fullscreen-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  transition: all var(--transition-fast);
+}
+.map-fullscreen-btn:hover {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.map-container {
+  width: 100%;
+  height: 400px;
+  background: var(--color-surface);
+}
+
+/* Custom marker */
+.map-marker-custom {
+  background: transparent !important;
+  border: none !important;
+}
+
+.marker-dot {
+  width: 12px;
+  height: 12px;
+  background: var(--color-accent);
+  border: 2px solid white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 8px rgba(96, 165, 250, 0.5);
+}
+
+.marker-pulse {
+  width: 24px;
+  height: 24px;
+  background: rgba(96, 165, 250, 0.3);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Override Leaflet tiles background for dark mode */
+.leaflet-container {
+  background: var(--color-surface) !important;
+}
+
+@media (max-width: 640px) {
+  .map-container { height: 280px; }
+}

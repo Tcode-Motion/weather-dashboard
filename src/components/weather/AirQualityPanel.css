@@ -1,0 +1,116 @@
+.aqi-section { }
+
+.aqi-card {
+  padding: var(--space-5) !important;
+}
+
+.aqi-score-row {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+  padding-bottom: var(--space-4);
+  margin-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+  padding-left: var(--space-3);
+}
+
+.aqi-gauge-wrapper {
+  position: relative;
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.aqi-gauge {
+  width: 80px;
+  overflow: visible;
+}
+
+.aqi-value {
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  line-height: 1;
+  text-shadow: 0 0 12px currentColor;
+}
+
+.aqi-info { flex: 1; min-width: 0; }
+
+.aqi-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+}
+
+.aqi-desc {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  margin-bottom: 4px;
+}
+
+.aqi-advice {
+  font-size: 11px;
+  color: var(--color-text-tertiary);
+  line-height: 1.4;
+}
+
+.aqi-pollutants {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.aqi-pollutant {}
+
+.aqi-pollutant-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.aqi-pollutant-name {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.aqi-pollutant-value {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.aqi-pollutant-unit {
+  font-size: 10px;
+  color: var(--color-text-tertiary);
+  font-weight: 400;
+}
+
+.aqi-bar-track {
+  height: 4px;
+  background: var(--color-surface);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.aqi-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+}
+
+@media (max-width: 360px) {
+  .aqi-score-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+}

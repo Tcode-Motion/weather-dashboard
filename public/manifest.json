@@ -1,0 +1,19 @@
+{
+  "name": "Nimbus Weather",
+  "short_name": "Nimbus",
+  "description": "Premium weather platform with real-time forecasts, interactive maps, and weather intelligence. Free, no API key required.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0e1a",
+  "theme_color": "#0a0e1a",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["weather", "utilities"]
+}

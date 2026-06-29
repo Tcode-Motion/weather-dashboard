@@ -1,0 +1,118 @@
+.favorites-section { margin-top: var(--space-8); }
+
+.favorites-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-5);
+}
+
+.fav-add-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  transition: all var(--transition-fast);
+}
+.fav-add-btn:hover:not(:disabled) {
+  background: var(--color-surface);
+  color: var(--color-warning);
+  border-color: var(--color-warning);
+}
+.fav-added {
+  color: var(--color-warning) !important;
+  border-color: var(--color-warning) !important;
+}
+.fav-add-btn:disabled {
+  cursor: default;
+}
+
+.favorites-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-10) var(--space-6) !important;
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+.empty-icon {
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-2);
+}
+
+.empty-hint {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+}
+
+.favorites-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-3);
+}
+
+.fav-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4) !important;
+  cursor: pointer;
+}
+
+.fav-pin-icon { color: var(--color-accent); flex-shrink: 0; }
+
+.fav-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.fav-name {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fav-country {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+}
+
+.fav-pinned {
+  color: var(--color-warning);
+  flex-shrink: 0;
+}
+
+.fav-actions {
+  display: flex;
+  gap: var(--space-1);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.fav-card:hover .fav-actions { opacity: 1; }
+
+.fav-actions button {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-tertiary);
+  transition: all var(--transition-fast);
+}
+.fav-actions button:hover {
+  background: var(--color-surface);
+  color: var(--color-text);
+}

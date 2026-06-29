@@ -1,0 +1,108 @@
+/* ═══════════════════════════════════════════════════
+ *  App Layout — Two-column responsive grid
+ * ═══════════════════════════════════════════════════ */
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.app-main {
+  flex: 1;
+  width: 100%;
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-6) var(--space-10);
+}
+
+/* Landing page needs full width, no max-width */
+.app-main:has(.landing-page) {
+  max-width: none;
+  padding: 0;
+}
+
+/* Two-column grid layout */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+/* Left (main) column */
+.col-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+}
+
+/* Right (sidebar) column */
+.col-side {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: sticky;
+  top: calc(var(--header-height) + var(--space-4));
+  max-height: calc(100vh - var(--header-height) - var(--space-8));
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.1) transparent;
+}
+
+.col-side::-webkit-scrollbar { width: 4px; }
+.col-side::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+
+/* Stack on tablets/mobile */
+@media (max-width: 1100px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+  .col-side {
+    position: static;
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-main { padding: var(--space-4) var(--space-4) var(--space-12); }
+}
+
+/* Error banner */
+.error-banner {
+  padding: var(--space-5) var(--space-6) !important;
+  border-left: 3px solid var(--color-danger);
+  margin-bottom: var(--space-6);
+  text-align: center;
+}
+.error-banner p:first-child { font-weight: 600; color: var(--color-danger); }
+.error-hint { font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-top: var(--space-2); }
+
+/* Section titles */
+.section-title {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+
+/* Spacing between stacked sections */
+.col-main > * + * { margin-top: var(--space-6); }
+.col-side > * + * { margin-top: var(--space-4); }

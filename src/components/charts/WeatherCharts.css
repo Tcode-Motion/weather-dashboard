@@ -1,0 +1,41 @@
+.weather-charts { margin-top: var(--space-8); }
+
+.chart-tabs {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+  overflow-x: auto;
+  padding-bottom: var(--space-2);
+  -webkit-overflow-scrolling: touch;
+}
+
+.chart-tab {
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.chart-tab:hover {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.chart-tab-active {
+  background: var(--color-surface-2);
+  color: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
+}
+
+.chart-container {
+  padding: var(--space-4) !important;
+}
+
+@media (max-width: 480px) {
+  .chart-tab { font-size: 11px; padding: var(--space-1) var(--space-3); }
+}

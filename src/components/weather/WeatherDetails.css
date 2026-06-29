@@ -1,0 +1,45 @@
+.wx-details { }
+
+.details-card {
+  padding: var(--space-2) 0 !important;
+  overflow: hidden;
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 9px var(--space-5);
+  transition: background var(--transition-fast);
+}
+
+.detail-row:hover { background: var(--color-surface); }
+
+.detail-row-border {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.detail-row-icon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-2);
+  flex-shrink: 0;
+}
+
+.detail-row-label {
+  flex: 1;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.detail-row-value {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--color-text);
+  text-align: right;
+}
